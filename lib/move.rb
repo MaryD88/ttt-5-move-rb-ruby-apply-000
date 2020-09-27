@@ -1,26 +1,19 @@
 
-require_relative "../lib/valid_move.rb"
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
 
-describe './lib/valid_move.rb' do
+def input_to_index(user_input)
+  new_user_input = user_input.to_i
+  new_user_input -= 1
+  return new_user_input
+end
 
-  it 'returns true for a valid position on an empty board' do
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    index = 0
-    expect(valid_move?(board, index)).to be_truthy
-  end
-
-  it 'returns nil or false for an occupied position' do
-    board = [" ", " ", " ", " ", "X", " ", " ", " ", " "]
-    index = 4
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
-
-  it 'returns nil or false for a position that is not on the board' do
-    board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-    index = 100
-
-    expect(valid_move?(board, index)).to be_falsey
-  end
-
+def move(board, index, character = "X")
+  board[index] = character
+  return board
 end
