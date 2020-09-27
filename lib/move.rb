@@ -1,5 +1,6 @@
 def display_board
-  puts row = ["   " ""]
+  puts row = ["   " "|" "   " "|" "   "]
+  puts separator = ""
 
 
 def display_board(board)
