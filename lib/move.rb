@@ -1,6 +1,5 @@
 puts "Welcome to Tic Tac Toe!"
-def board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-end
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 puts "Where would you like to go?"
 
 def display_board(board)
